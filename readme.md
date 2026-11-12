@@ -14,7 +14,7 @@ git commit -m "dev: 222"
 # 3. （可选）定期把 main 的更新同步回 dev，避免偏离
 git checkout dev
 git merge main
-git commit -m "Merge branch 'main' into dev"
+git commit -m "Merge branch 'main' into dev 222"
 
 # 4. 发版时把 dev 合并到 main —— 关键命令
 git checkout main
