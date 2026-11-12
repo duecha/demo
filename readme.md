@@ -11,13 +11,15 @@ git add -A
 git commit -m "dev: 222"
 # ... 反复多次
 
-git checkout main
-git add -A
-git commit -m "main: 1+2+3"
-
 # 3. （可选）定期把 main 的更新同步回 dev，避免偏离
 git checkout dev
 git merge main
+git commit -m "Merge branch 'main' into dev"
+
+# 4. 发版时把 dev 合并到 main —— 关键命令
+git checkout main
+git merge --squash dev        # 把所有 dev 提交压成一个暂存变更
+git commit -m "release: v1.0.0"   # main 上只多这 1 个提交
 
 ```
 
